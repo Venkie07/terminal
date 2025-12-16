@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #00ff00;
+  font-family: Consolas, "Courier New", monospace;
+  height: 100vh;
+}
+.about-title {
+  color: #00ffff;
+}
+
+.about-text {
+  color: #7fffd4;
+}
+
+.about-divider {
+  color: #555;
+}
+
+.about-credit {
+  color: #c629ff; 
+}
+.about-link {
+  color: #00ff00;
+  text-decoration: underline;
+}
+
+#terminal {
+  padding: 10px;
+  height: 100vh;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.cmd-line {
+  display: flex;
+  align-items: flex-start;
+}
+
+.prompt {
+  white-space: nowrap;
+}
+
+.cmd-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #00ff00;
+  font-family: inherit;
+  font-size: 16px;
+  flex: 1;
+  caret-color: #00ff00;
+}
