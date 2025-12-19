@@ -55,5 +55,6 @@ body {
   font-family: inherit;
   font-size: 16px;
   flex: 1;
+  width:80%;
   caret-color: #00ff00;
 }
