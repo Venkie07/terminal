@@ -21,16 +21,16 @@ const commands = {
   help() {
     printLine("WebHub Terminal – command reference");
     printLine("------------------------------------------------");
-    printLine("about                   → about terminal");
-    printLine("setname <name>          → change username");
-    printLine("cls | clear             → clear screen");
-    printLine("add <name> <url>        → add a website");
-    printLine("modify <name> <url>     → update a website");
-    printLine("remove <name>           → remove a website");
-    printLine("rename <old> <new>      → rename a website");
-    printLine("open <name>             → open a website");
-    printLine("ls                      → list websites");
-    printLine("ls -l                   → list sites with URLs");
+    printLine("about                    → about terminal");
+    printLine("setname <name>           → change username");
+    printLine("cls | clear              → clear screen");
+    printLine("add <name> <url>         → add a website");
+    printLine("modify <name> <url>      → update a website");
+    printLine("remove <name>            → remove a website");
+    printLine("rename <old> <new>       → rename a website");
+    printLine("open <name> | go <name>  → open a website");
+    printLine("ls                       → list websites");
+    printLine("ls -l                    → list sites with URLs");
     printLine("------------------------------------------------");
     printLine("\n");
   },
@@ -271,10 +271,13 @@ function newPrompt() {
       historyIndex = commandHistory.length;
 
       if (rawValue) {
+        //const parts = rawValue.split(" ");
+        //const cmd = parts[0].toLowerCase();
+        //const args = parts.slice(1).map(a => a.toLowerCase());
         const parts = rawValue.split(" ");
-        const cmd = parts[0].toLowerCase();
+        const rawCmd = parts[0].toLowerCase();
+        const cmd = rawCmd === "go" ? "open" : rawCmd;
         const args = parts.slice(1).map(a => a.toLowerCase());
-
         if (commands[cmd]) {
           commands[cmd](args);
         } else {
